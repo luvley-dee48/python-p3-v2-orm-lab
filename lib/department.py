@@ -1,6 +1,4 @@
-# lib/department.py
 from __init__ import CURSOR, CONN
-
 
 class Department:
 
@@ -116,10 +114,10 @@ class Department:
     def instance_from_db(cls, row):
         """Return a Department object having the attribute values from the table row."""
 
-        # Check the dictionary for an existing instance using the row's primary key
+        
         department = cls.all.get(row[0])
         if department:
-            # ensure attributes match row values in case local instance was modified
+           
             department.name = row[1]
             department.location = row[2]
         else:
